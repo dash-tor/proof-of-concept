@@ -1,0 +1,4 @@
+
+<h1 class="pie_h1">{{this.title}}</h1>
+<div echarts (chartInit)="onChartInit($event)" (chartClick)="onChartClick($event)" [options]="option" class="demo-chart"></div>
+<app-node-cards (onPlusClick)="toggleStepper = !toggleStepper" *ngIf="toggleStepper"></app-node-cards>

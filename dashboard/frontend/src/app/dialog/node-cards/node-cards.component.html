@@ -1,0 +1,6 @@
+
+<h1 class="popup_h1">{{this.data.type}}</h1>
+<div class="cards">
+    <app-node-card *ngFor="let nodedata of NODESDATA" [nodedata]="nodedata"></app-node-card>
+    <app-quorum-card *ngFor="let quorumdata of QUORUMDATA" [quorumdata]="quorumdata"></app-quorum-card>
+</div> 

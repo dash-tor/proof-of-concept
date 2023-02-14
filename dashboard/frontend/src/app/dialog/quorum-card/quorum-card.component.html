@@ -1,0 +1,13 @@
+<mat-card (click)="showNodes(quorumdata)" >    
+    <mat-card-title>{{quorumdata.id}}</mat-card-title>
+    <mat-card-content>
+        <div class="attrib">
+            <div class="attribname">Members:</div>
+            <div class="attribname">{{quorumdata.members.length}}</div>
+        </div>
+        <div class="attrib">
+            <div class="attribname">Hash:</div>
+            <div class="attribname">{{quorumdata.hash}}</div>
+        </div>
+    </mat-card-content>
+  </mat-card>

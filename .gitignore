@@ -1,0 +1,5 @@
+data/
+bin/
+automated_build/latest-commit
+automated_build/build_log
+logs/

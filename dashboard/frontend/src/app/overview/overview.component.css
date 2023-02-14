@@ -1,0 +1,17 @@
+.overview{
+    margin-top: 10px;
+    background-color: #008de4ff;
+    width: 100%;
+    padding: 20px 10px;
+    color: #fff;
+    font-size: 15pt;
+}
+
+.overview{
+    display: flex;
+    flex-direction: row;
+}
+
+.overview-comp:not(:first-child){
+    margin-left: 30px;
+}

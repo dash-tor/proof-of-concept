@@ -1,0 +1,17 @@
+<mat-card>    
+    <mat-card-content>
+        <div class="attrib">
+            <div class="attribname">type:</div>
+            <div class="attribname">{{(nodedata.masternode ? 'Masternode' : 'Fullnode')}}</div>
+        </div>
+        <div class="attrib">
+            <div class="attribname">onion:</div>
+            <div class="attribname onion_addr">{{nodedata.onion_addr}}</div>
+        </div>
+        <div class="attrib">
+            <div class="attribname">Masternode status:</div>
+            <div *ngIf="nodedata.masternode" class="attribname" [ngClass]="{'mn_ready': nodedata.masternode_status === 'READY', 'mn_error': nodedata.masternode_status === 'ERROR'}">{{nodedata.masternode_status}}</div>
+            <div *ngIf="!nodedata.masternode" class="attribname">----</div>
+        </div>
+    </mat-card-content>
+  </mat-card>

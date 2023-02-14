@@ -1,0 +1,50 @@
+mat-card{
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+    margin: 10px;
+    width: 400px;
+    background-color: #f0f0f0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+mat-card:hover{
+    cursor: pointer;
+    background-color: #dedede;
+}
+
+mat-card-content{
+    width: 100%;
+}
+
+.attrib{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+*, ::after, ::before{
+    font-family: Roboto;
+}
+
+.mn_ready{
+    color: #01d170;
+    font-weight: bold;
+}
+
+.mn_error{
+    color: #d10101;
+    font-weight: bold;
+}
+
+.onion_addr{
+    font-size: 7pt;
+}
+
+.mat-dialog-container{
+    font-family: Roboto;
+}
+
+

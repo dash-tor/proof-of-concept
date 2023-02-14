@@ -1,0 +1,18 @@
+<br/>
+
+<div class="flex-container">
+    <div>
+       <app-pie-chart [data]="nodeCountData" title="Nodes"></app-pie-chart> 
+    </div>
+    <div>
+        <app-pie-chart [data]="masternodeStatusData" title="Masternodes status"></app-pie-chart>
+    </div>
+    <div>
+        <app-pie-chart [data]="quorumData" title="Quorums"></app-pie-chart>
+    </div>
+</div>
+<br/>
+<br/>
+    <app-line-chart title="InstantSend" [data]="instantSendData"></app-line-chart>
+<br/>
+<br/>

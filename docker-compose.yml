@@ -1,0 +1,51 @@
+version: "3"
+services:
+  dashd:
+    build: src
+    volumes:
+      - ./data:/dash/data
+      - /var/run/docker.sock:/var/run/docker.sock # This is needed so the container can find out its own name and save files to an easy to access location
+    environment:
+      - MASTERNODE=false
+      - REPORTING_BACKEND_URL=http://dashboard:5000/
+      - INITIAL_NODE=r3eucdfvrvwao7wsgetxqfct6fg227tgehwn6ppqdtrki77yqxwdimad.onion
+    logging: 
+          options: 
+               max-size: "10m" 
+               max-file: "1"
+
+  masternode:
+    build: src
+    volumes:
+      - ./data:/dash/data
+      - /var/run/docker.sock:/var/run/docker.sock
+    environment:
+      - MASTERNODE=true
+      - MASTERNODE_API_URL=http://masternode_api:5000
+      - REPORTING_BACKEND_URL=http://dashboard:5000/
+      - INITIAL_NODE=r3eucdfvrvwao7wsgetxqfct6fg227tgehwn6ppqdtrki77yqxwdimad.onion
+    logging: 
+          options: 
+               max-size: "10m" 
+               max-file: "1"
+  masternode_api:
+    build: src
+    volumes:
+      - ./data:/dash/data
+      - /var/run/docker.sock:/var/run/docker.sock
+    environment:
+      - MASTERNODE=false
+      - MASTERNODE_API_SERVER=true
+      - GENERATE_BLOCKS_EVERY=60
+      - REPORTING_BACKEND_URL=http://dashboard:5000/
+
+    logging: 
+          options: 
+               max-size: "10m" 
+               max-file: "1"
+
+  dashboard:
+    build: dashboard
+    ports:
+      - "5000:5000"
+      - "5678:5678"
